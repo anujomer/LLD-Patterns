@@ -1,0 +1,47 @@
+// Interface
+interface Animal {
+    void makeSound();  // abstract method
+    void move();       // abstract method
+}
+
+// Concrete classes implementing the interface
+class Dog implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Dog barks");
+    }
+    public void test(){
+        System.out.println("Dog test");
+    }
+    @Override
+    public void move() {
+        System.out.println("Dog runs");
+    }
+}
+
+class Bird implements Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Bird chirps");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Bird flies");
+    }
+}
+
+// Abstraction class to test the abstraction
+public class Abstraction {
+    public static void main(String[] args) {
+        Animal dog = new Dog();
+        Animal bird = new Bird();
+
+        dog.makeSound();
+        dog.move();
+
+
+        bird.makeSound();
+        bird.move();
+    }
+}

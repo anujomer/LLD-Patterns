@@ -1,0 +1,42 @@
+// Superclass
+class Animal {
+    public void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+// Subclass overriding the method of the superclass
+class Dog extends Animal {
+    @Override
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+
+    public void Test(){
+        System.out.println("test");    }
+}
+
+// Subclass overriding the method of the superclass
+class Cat extends Animal {
+    @Override
+    public void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        // Creating superclass reference, but object is of subclass
+        Animal myAnimal = new Animal();
+        Animal myDog = new Dog();   // Dog object, referred by Animal reference
+        Animal myCat = new Cat();   // Cat object, referred by Animal reference
+
+
+        Dog myDog2 = new Dog();
+        myDog2.Test();
+        // JVM decides at runtime which method to call based on object type
+        myAnimal.sound();  // Output: Animal makes a sound
+        myDog.sound();     // Output: Dog barks
+        myCat.sound();     // Output: Cat meows
+    }
+}
